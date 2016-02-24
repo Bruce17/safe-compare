@@ -1,6 +1,6 @@
 {
   "name": "safe-compare",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Constant-time comparison algorithm to prevent timing attacks.",
   "main": "index.js",
   "scripts": {
