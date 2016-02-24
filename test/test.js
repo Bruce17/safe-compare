@@ -2,7 +2,7 @@ var safeCompare = require('../index');
 var assert      = require('assert');
 
 describe('safe compare', function () {
-    describe('equal', function () {
+    describe('should equal', function () {
         it('"foo" against "foo"', function () {
             assert.equal(true, safeCompare('foo', 'foo'));
         });
@@ -11,16 +11,16 @@ describe('safe compare', function () {
             assert.equal(true, safeCompare('hello world', 'hello world'));
         });
 
-        it('"?????" against "?????"', function () {
-            assert.equal(true, safeCompare('?????', '?????'));
+        it('"你好，世界" against "你好，世界"', function () {
+            assert.equal(true, safeCompare('你好，世界', '你好，世界'));
         });
 
-        it('"????????????" against "????????????"', function () {
-            assert.equal(true, safeCompare('????????????', '????????????'));
+        it('"สวัสดีชาวโลก" against "สวัสดีชาวโลก"', function () {
+            assert.equal(true, safeCompare('สวัสดีชาวโลก', 'สวัสดีชาวโลก'));
         });
     });
 
-    describe('not equal', function () {
+    describe('should not equal', function () {
         it('"foo" against "bar"', function () {
             assert.equal(false, safeCompare('foo', 'bar'));
         });
@@ -29,12 +29,43 @@ describe('safe compare', function () {
             assert.equal(false, safeCompare('hello world', 'not hello world'));
         });
 
-        it('"?????" against "??"', function () {
-            assert.equal(false, safeCompare('?????', '??'));
+        it('"你好，世界" against "您好"', function () {
+            assert.equal(false, safeCompare('你好，世界', '您好'));
         });
 
-        it('"????????????" against "??????"', function () {
-            assert.equal(false, safeCompare('????????????', '??????'));
+        it('"สวัสดีชาวโลก" against "สวัสดี"', function () {
+            assert.equal(false, safeCompare('สวัสดีชาวโลก', 'สวัสดี'));
+        });
+    });
+
+    describe('should not throw an error for non string argument', function () {
+        var testData = [
+            undefined,
+            void 0,
+            null,
+            true,
+            false,
+            {},
+            [],
+            42,
+            NaN
+        ];
+
+        testData.forEach(function (data) {
+            var itemContent = data;
+            var itemType    = (data instanceof Array ? 'array' : typeof data);
+
+            if (itemType === 'array') {
+                itemContent = '[' + data.join(', ') + ']';
+            }
+
+            it('"' + itemContent + '" (type "' + itemType + '")', function () {
+                // Test the first argument position.
+                safeCompare(data, '');
+
+                // Test the second argument position.
+                safeCompare('', data);
+            });
         });
     });
 });
