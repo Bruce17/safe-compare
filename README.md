@@ -33,7 +33,7 @@ $ npm test
 
 This Node.js module is a improvement of the two existing modules [scmp](https://github.com/freewil/scmp) and [secure-compare](https://github.com/vdemedes/secure-compare). It uses the best parts of both implementations.
 
-The implementation of [scmp](https://github.com/freewil/scmp) is a good base, but it has a shorter execution time if the string's length is not equal. The package [secure-compare](https://github.com/vdemedes/secure-compare) always compares the two input strings, but ist implementation is not as clean as in [scmp](https://github.com/freewil/scmp).
+The implementation of [scmp](https://github.com/freewil/scmp) is a good base, but it has a shorter execution time if the string's length is not equal. The package [secure-compare](https://github.com/vdemedes/secure-compare) always compares the two input strings, but its implementation is not as clean as in [scmp](https://github.com/freewil/scmp).
 
 
 ## License
