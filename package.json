@@ -1,0 +1,38 @@
+{
+  "name": "safe-compare",
+  "version": "1.0.0",
+  "description": "Constant-time comparison algorithm to prevent timing attacks.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "posttest": "matcha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bruce17/safe-compare.git"
+  },
+  "keywords": [
+    "safe-compare",
+    "secure-compare",
+    "compare",
+    "time-equivalent-comparison",
+    "time",
+    "equivalent",
+    "timing",
+    "attack",
+    "constant-time",
+    "constant",
+    "time"
+  ],
+  "author": "Michael Raith",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/Bruce17/safe-compare/issues"
+  },
+  "homepage": "https://github.com/Bruce17/safe-compare#readme",
+  "devDependencies": {
+    "matcha": "^0.6.1",
+    "mocha": "^2.4.5"
+  }
+}
