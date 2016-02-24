@@ -3,6 +3,12 @@ Constant-time comparison algorithm to prevent Node.js timing attacks.
 
 For more information about Node.js timing attacks, please visit https://snyk.io/blog/node-js-timing-attack-ccc-ctf/.
 
+[![npm package](https://img.shields.io/npm/v/safe-compare.svg?style=flat-square)](https://www.npmjs.org/package/safe-compare)
+[![tag:?](https://img.shields.io/github/tag/Bruce17/safe-compare.svg?style=flat-square)](https://github.com/Bruce17/safe-compare/releases)
+[![Dependency Status](https://david-dm.org/Bruce17/safe-compare.svg?style=flat-square)](https://david-dm.org/Bruce17/safe-compare)
+[![devDependency Status](https://david-dm.org/Bruce17/safe-compare/dev-status.svg?style=flat-square)](https://david-dm.org/Bruce17/safe-compare#info=devDependencies)
+[![Build Status](https://travis-ci.org/Bruce17/safe-compare.svg?style=flat-square&branch=master)](https://travis-ci.org/Bruce17/safe-compare)
+
 ## Installation
 
 ```
