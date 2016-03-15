@@ -1,6 +1,6 @@
 {
   "name": "safe-compare",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Constant-time comparison algorithm to prevent timing attacks.",
   "main": "index.js",
   "scripts": {
@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/Bruce17/safe-compare#readme",
   "devDependencies": {
-    "matcha": "^0.6.1",
+    "matcha": "^0.7.0",
     "mocha": "^2.4.5"
   }
 }
