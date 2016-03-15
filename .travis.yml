@@ -3,8 +3,10 @@ language: node_js
 
 # define node.js versions to run on
 node_js:
+  - "5.8"
   - "5.7"
   - "5.6"
+  - "4.4"
   - "4.3"
   - "4.2"
   - "4.1"
