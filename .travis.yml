@@ -3,6 +3,8 @@ language: node_js
 
 # define node.js versions to run on
 node_js:
+  - "stable"
+  - "7"
   - "6"
   - "5"
   - "4"
@@ -10,6 +12,8 @@ node_js:
   - "0.12"
   - "0.11"
   - "0.10"
+  - "0.8"
+  - "0.6"
 
 # run before everey other script
 before_script:
