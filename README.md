@@ -9,7 +9,10 @@ For more information about Node.js timing attacks, please visit https://snyk.io/
 [![devDependency Status](https://david-dm.org/Bruce17/safe-compare/dev-status.svg?style=flat-square)](https://david-dm.org/Bruce17/safe-compare#info=devDependencies)
 [![Coverage Status](https://coveralls.io/repos/github/Bruce17/safe-compare/badge.svg?branch=master)](https://coveralls.io/github/Bruce17/safe-compare?branch=master)
 [![Code Climate](https://codeclimate.com/github/Bruce17/safe-compare/badges/gpa.svg)](https://codeclimate.com/github/Bruce17/safe-compare)
-[![Build Status](https://travis-ci.org/Bruce17/safe-compare.svg?style=flat-square&branch=master)](https://travis-ci.org/Bruce17/safe-compare)
+[![Known Vulnerabilities](https://snyk.io/test/github/bruce17/safe-compare/badge.svg)](https://snyk.io/test/github/bruce17/safe-compare)
+[![bitHound Overall Score](https://www.bithound.io/github/Bruce17/safe-compare/badges/score.svg)](https://www.bithound.io/github/Bruce17/safe-compare)
+[![Build Status - Tarvis](https://travis-ci.org/Bruce17/safe-compare.svg?style=flat-square&branch=master)](https://travis-ci.org/Bruce17/safe-compare)
+[![Build status - AppVeyor](https://ci.appveyor.com/api/projects/status/ounmeq5c4ajuu7g3/branch/master?svg=true)](https://ci.appveyor.com/project/Bruce17/safe-compare/branch/master)
 
 ## Installation
 
