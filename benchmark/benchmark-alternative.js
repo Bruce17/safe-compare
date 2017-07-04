@@ -1,10 +1,10 @@
-var safeCompare = require('../index');
+var safeCompare = require('../safe-compare-alternative');
 var pkg = require('../package.json');
 
 // Set some benachmark default settings.
 set('iterations', pkg.benchmark.iterations);
 
-suite('safe compare (equal)', function () {
+suite('safe compare - alternative (equal)', function () {
     var equal = {
         strOne: 'b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9',
         strTwo: 'b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9'
@@ -27,7 +27,7 @@ suite('safe compare (equal)', function () {
     });
 });
 
-suite('safe compare (not equal)', function () {
+suite('safe compare - alternative (not equal)', function () {
     var notEqual = {
         strOne: 'b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9',
         strTwo: 'f6a38f96511ff15cad471549b9a6ed62dc63c030bfe979dda3ca5588a1c9a5a1'
@@ -50,7 +50,7 @@ suite('safe compare (not equal)', function () {
     });
 });
 
-suite('safe compare (not equal, different length)', function () {
+suite('safe compare - alternative (not equal, different length)', function () {
     var notEqual = {
         strOne: 'b94d27b9934d3e08a52e52d7da7dabfac484efe37a5380ee9088f7ace2efcde9',
         strTwo: 'f6a38f96511ff15cad471549b9a6ed62'

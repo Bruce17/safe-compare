@@ -39,6 +39,9 @@
     "coveralls": "^2.11.14",
     "istanbul": "^0.4.5",
     "matcha": "^0.7.0",
-    "mocha": "^3.1.2"
+    "mocha": "^3.4.2"
+  },
+  "benchmark": {
+    "iterations": 5000
   }
 }
