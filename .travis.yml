@@ -4,6 +4,8 @@ language: node_js
 # define node.js versions to run on
 node_js:
   - "stable"
+  - "9"
+  - "8"
   - "7"
   - "6"
   - "5"
