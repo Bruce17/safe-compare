@@ -16,7 +16,7 @@ For more information about Node.js timing attacks, please visit https://snyk.io/
 
 **NOTICE**:
 
-If you are using Node.js v6.6.0 or higher, you can use [crypto.timingSafeEqual(a, b)](https://nodejs.org/api/crypto.html#crypto_crypto_timingsafeequal_a_b) from the `crypto` module.
+If you are using Node.js v6.6.0 or higher, you can use [crypto.timingSafeEqual(a, b)](https://nodejs.org/api/crypto.html#crypto_crypto_timingsafeequal_a_b) from the `crypto` module. Keep in mind that the method `crypto.timingSafeEqual` only accepts `Buffer`s with the same length! This bundle will handle strings with different lengths for you.
 
 
 ## Installation
