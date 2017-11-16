@@ -5,14 +5,21 @@
 
 'use strict';
 
+var crypto = require('crypto');
+var bufferAlloc = require('buffer-alloc')
+
+
 /**
- * Do a constant time string comparison. Always compare the complete strings against each other to get a constant time.
- * This method does not short-cut if the two string's length differs.
+ * Do a constant time string comparison. Always compare the complete strings
+ * against each other to get a constant time. This method does not short-cut
+ * if the two string's length differs.
  *
  * @param {string} a
  * @param {string} b
+ * 
+ * @return {boolean}
  */
-module.exports = function safeCompare(a, b) {
+var safeCompare = function safeCompare(a, b) {
     var strA = String(a);
     var strB = String(b);
     var lenA = strA.length;
@@ -29,3 +36,32 @@ module.exports = function safeCompare(a, b) {
 
     return result === 0;
 };
+
+
+/**
+ * Call native "crypto.timingSafeEqual" methods.
+ * All passed values will be converted into strings first.
+ * 
+ * @param {string} a
+ * @param {string} b
+ * 
+ * @return {boolean}
+ */
+var nativeTimingSafeEqual = function nativeTimingSafeEqual(a, b) {
+    var strA = String(a);
+    var strB = String(b);
+    
+    var len = Math.max(strA.length, strB.length);
+    
+    var bufA = bufferAlloc(len, strA, 'utf-8');
+    var bufB = bufferAlloc(len, strB, 'utf-8');
+    
+    return crypto.timingSafeEqual(bufA, bufB);
+};
+
+
+module.exports = (
+    typeof crypto.timingSafeEqual !== 'undefined' ?
+        nativeTimingSafeEqual :
+        safeCompare
+);
