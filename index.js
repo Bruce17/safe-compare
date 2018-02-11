@@ -6,7 +6,7 @@
 'use strict';
 
 var crypto = require('crypto');
-var bufferAlloc = require('buffer-alloc')
+var bufferAlloc = require('buffer-alloc');
 
 
 /**
