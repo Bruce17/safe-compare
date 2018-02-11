@@ -36,6 +36,10 @@ describe('safe compare', function () {
         it('"สวัสดีชาวโลก" against "สวัสดี"', function () {
             assert.equal(false, safeCompare('สวัสดีชาวโลก', 'สวัสดี'));
         });
+
+        it('"\\u00e8" against "\\u01e8"', function () {
+            assert.equal(false, safeCompare('\u00e8', '\u01e8'));
+        });
     });
 
     describe('should not throw an error for non string argument', function () {
