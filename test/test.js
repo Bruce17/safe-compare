@@ -18,6 +18,14 @@ describe('safe compare', function () {
         it('"สวัสดีชาวโลก" against "สวัสดีชาวโลก"', function () {
             assert.equal(true, safeCompare('สวัสดีชาวโลก', 'สวัสดีชาวโลก'));
         });
+
+        it('"\\u00e8" against "\\u00e8"', function () {
+            assert.equal(true, safeCompare('\u00e8', '\u00e8'));
+        });
+
+        it('"\\u01e8" against "\\u01e8"', function () {
+            assert.equal(true, safeCompare('\u01e8', '\u01e8'));
+        });
     });
 
     describe('should not equal', function () {
