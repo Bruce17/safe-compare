@@ -26,6 +26,10 @@ describe('safe compare', function () {
         it('"\\u01e8" against "\\u01e8"', function () {
             assert.equal(true, safeCompare('\u01e8', '\u01e8'));
         });
+        
+        it('"aaaaaaaaaa" against "aaaaaaaaaa"', function () {
+            assert.equal(true, safeCompare('aaaaaaaaaa', 'aaaaaaaaaa'));
+        });
     });
 
     describe('should not equal', function () {
@@ -47,6 +51,14 @@ describe('safe compare', function () {
 
         it('"\\u00e8" against "\\u01e8"', function () {
             assert.equal(false, safeCompare('\u00e8', '\u01e8'));
+        });
+        
+        it('"a" against "aaaaaaaaaa"', function () {
+            assert.equal(false, safeCompare('a', 'aaaaaaaaaa'));
+        });
+        
+        it('"aaaaaaaaaa" against "a"', function () {
+            assert.equal(false, safeCompare('aaaaaaaaaa', 'a'));
         });
     });
 
