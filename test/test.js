@@ -48,9 +48,17 @@ describe('safe compare', function () {
         it('"\\u00e8" against "\\u01e8"', function () {
             assert.equal(false, safeCompare('\u00e8', '\u01e8'));
         });
-        
+
         it('"a" against "aaaaaaaaaa"', function () {
             assert.equal(false, safeCompare('a', 'aaaaaaaaaa'));
+        });
+
+        it('"prefix" against "pre"', function () {
+            assert.equal(false, safeCompare('prefix', 'pre'));
+        });
+
+        it('"pre" against "prefix"', function () {
+            assert.equal(false, safeCompare('pre', 'prefix'));
         });
     });
 
