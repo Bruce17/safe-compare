@@ -36,6 +36,8 @@ safeCompare('hello', 'not hello'); // -> false
 safeCompare('hello foo', 'hello bar'); // -> false
 ```
 
+Note: runtime is always corresponding to the length of the first parameter.
+
 
 ## Tests
 
