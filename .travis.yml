@@ -20,6 +20,11 @@ node_js:
 # run before everey other script
 before_script:
   - npm install
+  
+  # New way to prepare codeclimate
+  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+  - chmod +x ./cc-test-reporter
+  - ./cc-test-reporter before-build
 
 # run some scripts
 script:
@@ -28,9 +33,9 @@ script:
   - npm run-script test-travis
 
 # trigger some additional tools after success
-after_success:
+after_script:
   # send coverage data to coveralls
   - npm run-script coveralls
   # send coverage data to codeclimate
-  - npm run-script codeclimate
+  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
 
