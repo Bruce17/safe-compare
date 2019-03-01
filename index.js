@@ -16,7 +16,7 @@ var bufferAlloc = require('buffer-alloc');
  *
  * @param {string} a
  * @param {string} b
- * 
+ *
  * @return {boolean}
  */
 var safeCompare = function safeCompare(a, b) {
@@ -41,24 +41,30 @@ var safeCompare = function safeCompare(a, b) {
 /**
  * Call native "crypto.timingSafeEqual" methods.
  * All passed values will be converted into strings first.
- * 
+ *
+ * Runtime is always corresponding to the length of the first parameter (string
+ * a).
+ *
  * @param {string} a
  * @param {string} b
- * 
+ *
  * @return {boolean}
  */
 var nativeTimingSafeEqual = function nativeTimingSafeEqual(a, b) {
     var strA = String(a);
     var strB = String(b);
-    
-    var len = Math.max(Buffer.byteLength(strA), Buffer.byteLength(strB));
-    
-    var bufA = bufferAlloc(len, 0, 'utf8');
+    var aLen = Buffer.byteLength(strA);
+    var bLen = Buffer.byteLength(strB);
+
+    // Always use length of a to avoid leaking the length. Even if this is a
+    // false positive because one is a prefix of the other, the explicit length
+    // check at the end will catch that.
+    var bufA = bufferAlloc(aLen, 0, 'utf8');
     bufA.write(strA);
-    var bufB = bufferAlloc(len, 0, 'utf8');
+    var bufB = bufferAlloc(aLen, 0, 'utf8');
     bufB.write(strB);
-    
-    return crypto.timingSafeEqual(bufA, bufB);
+
+    return crypto.timingSafeEqual(bufA, bufB) && aLen === bLen;
 };
 
 
