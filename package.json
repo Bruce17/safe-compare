@@ -40,7 +40,7 @@
     "matcha": "^0.7.0",
     "mocha": "^3.1.2"
   },
-  "dependencies": {
-    "buffer-alloc": "^1.2.0"
+  "engines": {
+    "node": ">=5.12.0"
   }
 }
