@@ -1,64 +1,64 @@
-var safeCompare = require('../index');
+var safeCompare = require('../src/index');
 var assert      = require('assert');
 
 describe('safe compare', function () {
     describe('should equal', function () {
         it('"foo" against "foo"', function () {
-            assert.equal(true, safeCompare('foo', 'foo'));
+            assert.strictEqual(true, safeCompare('foo', 'foo'));
         });
 
         it('"hello world" against "hello world"', function () {
-            assert.equal(true, safeCompare('hello world', 'hello world'));
+            assert.strictEqual(true, safeCompare('hello world', 'hello world'));
         });
 
         it('"你好，世界" against "你好，世界"', function () {
-            assert.equal(true, safeCompare('你好，世界', '你好，世界'));
+            assert.strictEqual(true, safeCompare('你好，世界', '你好，世界'));
         });
 
         it('"สวัสดีชาวโลก" against "สวัสดีชาวโลก"', function () {
-            assert.equal(true, safeCompare('สวัสดีชาวโลก', 'สวัสดีชาวโลก'));
+            assert.strictEqual(true, safeCompare('สวัสดีชาวโลก', 'สวัสดีชาวโลก'));
         });
 
         it('"\\u00e8" against "\\u00e8"', function () {
-            assert.equal(true, safeCompare('\u00e8', '\u00e8'));
+            assert.strictEqual(true, safeCompare('\u00e8', '\u00e8'));
         });
 
         it('"\\u01e8" against "\\u01e8"', function () {
-            assert.equal(true, safeCompare('\u01e8', '\u01e8'));
+            assert.strictEqual(true, safeCompare('\u01e8', '\u01e8'));
         });
     });
 
     describe('should not equal', function () {
         it('"foo" against "bar"', function () {
-            assert.equal(false, safeCompare('foo', 'bar'));
+            assert.strictEqual(false, safeCompare('foo', 'bar'));
         });
 
         it('"hello world" against "not hello world"', function () {
-            assert.equal(false, safeCompare('hello world', 'not hello world'));
+            assert.strictEqual(false, safeCompare('hello world', 'not hello world'));
         });
 
         it('"你好，世界" against "您好"', function () {
-            assert.equal(false, safeCompare('你好，世界', '您好'));
+            assert.strictEqual(false, safeCompare('你好，世界', '您好'));
         });
 
         it('"สวัสดีชาวโลก" against "สวัสดี"', function () {
-            assert.equal(false, safeCompare('สวัสดีชาวโลก', 'สวัสดี'));
+            assert.strictEqual(false, safeCompare('สวัสดีชาวโลก', 'สวัสดี'));
         });
 
         it('"\\u00e8" against "\\u01e8"', function () {
-            assert.equal(false, safeCompare('\u00e8', '\u01e8'));
+            assert.strictEqual(false, safeCompare('\u00e8', '\u01e8'));
         });
 
         it('"a" against "aaaaaaaaaa"', function () {
-            assert.equal(false, safeCompare('a', 'aaaaaaaaaa'));
+            assert.strictEqual(false, safeCompare('a', 'aaaaaaaaaa'));
         });
 
         it('"prefix" against "pre"', function () {
-            assert.equal(false, safeCompare('prefix', 'pre'));
+            assert.strictEqual(false, safeCompare('prefix', 'pre'));
         });
 
         it('"pre" against "prefix"', function () {
-            assert.equal(false, safeCompare('pre', 'prefix'));
+            assert.strictEqual(false, safeCompare('pre', 'prefix'));
         });
     });
 

@@ -1,4 +1,4 @@
-var safeCompare = require('../index');
+var safeCompare = require('../src/index');
 
 suite('safe compare (equal)', function () {
     var equal = {

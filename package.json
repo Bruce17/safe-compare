@@ -2,14 +2,14 @@
   "name": "safe-compare",
   "version": "1.1.3",
   "description": "Constant-time comparison algorithm to prevent timing attacks.",
-  "main": "index.js",
+  "main": "src/index.js",
   "engines": {
     "node": ">=5.12.0"
   },
   "scripts": {
-    "lint": "eslint index.js",
-    "mocha": "_mocha -b -R spec",
-    "test-cov": "nyc --reporter=lcov npm run mocha",
+    "lint": "eslint src/",
+    "mocha": "mocha -b -R spec",
+    "test-cov": "nyc npm run mocha",
     "test-coveralls": "npm run test-cov && nyc report --reporter=text-lcov | node ./node_modules/coveralls/bin/coveralls.js",
     "test": "npm run lint && npm run mocha",
     "posttest": "matcha",
