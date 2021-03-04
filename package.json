@@ -12,6 +12,7 @@
     "test-cov": "nyc --reporter=lcov npm run mocha",
     "test-coveralls": "npm run test-cov && nyc report --reporter=text-lcov | node ./node_modules/coveralls/bin/coveralls.js",
     "test": "npm run lint && npm run mocha",
+    "posttest": "matcha",
     "test-watch": "mocha -R progress --watch"
   },
   "repository": {
