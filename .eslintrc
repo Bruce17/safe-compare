@@ -1,0 +1,65 @@
+{
+  "env": {
+    "node": true
+  },
+  "globals": {
+    "describe": false,
+    "xdescribe": false,
+    "it": false,
+    "xit": false
+  },
+  "rules": {
+    "no-bitwise": 0,
+    "camelcase": 2,
+    "curly": [
+      2,
+      "all"
+    ],
+    "eqeqeq": 2,
+    "wrap-iife": [
+      2,
+      "any"
+    ],
+    "indent": [
+      2,
+      4,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "no-use-before-define": 1,
+    "new-cap": 2,
+    "no-caller": 2,
+    "quotes": [
+      2,
+      "single"
+    ],
+    "no-undef": 2,
+    "no-unused-vars": 2,
+    "strict": [
+      2,
+      "safe"
+    ],
+    "no-invalid-this": 2,
+    "keyword-spacing": [
+      2,
+      {}
+    ],
+    "space-infix-ops": 2,
+    "no-implicit-coercion": [
+      2,
+      {
+        "string": true
+      }
+    ],
+    "no-with": 2,
+    "no-multi-str": 2,
+    "no-trailing-spaces": 2,
+    "no-mixed-spaces-and-tabs": 2,
+    "eol-last": 2,
+    "brace-style": [
+      2,
+      "1tbs"
+    ]
+  }
+}

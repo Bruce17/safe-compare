@@ -7,7 +7,7 @@
     "node": ">=5.12.0"
   },
   "scripts": {
-    "lint": "eslint source/",
+    "lint": "eslint index.js",
     "mocha": "_mocha -b -R spec",
     "test-cov": "nyc --reporter=lcov npm run mocha",
     "test-coveralls": "npm run test-cov && nyc report --reporter=text-lcov | node ./node_modules/coveralls/bin/coveralls.js",
