@@ -6,7 +6,7 @@
 'use strict';
 
 var crypto = require('crypto');
-var bufferAlloc = require('buffer-alloc');
+var bufferAllocUnsafe = require('buffer-alloc-unsafe');
 
 
 /**
@@ -59,9 +59,9 @@ var nativeTimingSafeEqual = function nativeTimingSafeEqual(a, b) {
     // Always use length of a to avoid leaking the length. Even if this is a
     // false positive because one is a prefix of the other, the explicit length
     // check at the end will catch that.
-    var bufA = bufferAlloc(aLen, 0, 'utf8');
+    var bufA = bufferAllocUnsafe(aLen);
     bufA.write(strA);
-    var bufB = bufferAlloc(aLen, 0, 'utf8');
+    var bufB = bufferAllocUnsafe(aLen);
     bufB.write(strB);
 
     return crypto.timingSafeEqual(bufA, bufB) && aLen === bLen;
