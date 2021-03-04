@@ -4,7 +4,7 @@
   "description": "Constant-time comparison algorithm to prevent timing attacks.",
   "main": "src/index.js",
   "engines": {
-    "node": ">=5.12.0"
+    "node": ">=6.9.0"
   },
   "scripts": {
     "lint": "eslint src/",
@@ -40,13 +40,10 @@
   },
   "homepage": "https://github.com/Bruce17/safe-compare#readme",
   "devDependencies": {
-    "coveralls": "^3.0.4",
+    "coveralls": "^3.0.14",
     "eslint": "^4.19.1",
     "matcha": "^0.7.0",
-    "mocha": "^5.2.0",
-    "nyc": "^12.0.2"
-  },
-  "dependencies": {
-    "buffer-alloc-unsafe": "1.1.0"
+    "mocha": "^6.2.3",
+    "nyc": "^14.1.1"
   }
 }
