@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "eslint src/",
     "mocha": "mocha -b -R spec",
-    "test-cov": "nyc npm run mocha",
+    "test-cov": "nyc --reporter=lcov --reporter=text-summary  npm run mocha",
     "test-coveralls": "npm run test-cov && nyc report --reporter=text-lcov | node ./node_modules/coveralls/bin/coveralls.js",
     "test": "npm run lint && npm run mocha",
     "posttest": "matcha",
