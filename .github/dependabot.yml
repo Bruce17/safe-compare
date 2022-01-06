@@ -1,0 +1,10 @@
+version: 2
+updates:
+  # Maintain dependencies for GitHub Actions
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    allow:
+      # Allow only checks against production dependencies (ignores all devDependencies)
+      - dependency-type: "production"
