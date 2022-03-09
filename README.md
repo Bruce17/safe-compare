@@ -5,8 +5,6 @@ For more information about Node.js timing attacks, please visit https://snyk.io/
 
 [![npm package](https://img.shields.io/npm/v/safe-compare.svg?style=flat-square)](https://www.npmjs.org/package/safe-compare)
 [![tag:?](https://img.shields.io/github/tag/Bruce17/safe-compare.svg?style=flat-square)](https://github.com/Bruce17/safe-compare/releases)
-[![Dependency Status](https://david-dm.org/Bruce17/safe-compare.svg?style=flat-square)](https://david-dm.org/Bruce17/safe-compare)
-[![devDependency Status](https://david-dm.org/Bruce17/safe-compare/dev-status.svg?style=flat-square)](https://david-dm.org/Bruce17/safe-compare#info=devDependencies)
 [![Coverage Status](https://coveralls.io/repos/github/Bruce17/safe-compare/badge.svg?branch=master)](https://coveralls.io/github/Bruce17/safe-compare?branch=master)
 [![Code Climate](https://codeclimate.com/github/Bruce17/safe-compare/badges/gpa.svg)](https://codeclimate.com/github/Bruce17/safe-compare)
 [![Known Vulnerabilities](https://snyk.io/test/github/bruce17/safe-compare/badge.svg)](https://snyk.io/test/github/bruce17/safe-compare)
